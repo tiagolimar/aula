@@ -3,62 +3,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: gray;
 }
 
-div{
-    width: 150px;
-    line-height: 50px;
-    background-color: black;
-    color: white;
+form{
+    width: 350px;
+    border: 1px solid #dedede;
     border-radius: 5px;
-    text-align: center;
-}
-
-.rode{
-    animation: rodar ease-in infinite 600s;
-}
-
-.pulse{
-    animation: pulsar ease-in infinite 600s;
-}
-
-.pisque{
-    animation: piscar ease-in infinite 600s;
-}
-
-@keyframes rodar{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes pulsar{
-    0%{
-        transform: scale(1,1);
-    }
-    /* 33%{
-
-    }
-    66%{
-
-    } */
-    50%{
-        transform: scale(1.5,1.5);
-    }
-    100%{
-        transform: scale(1,1);
-    }
-}
-
-@keyframes piscar{
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
+    padding: 16px;
 }

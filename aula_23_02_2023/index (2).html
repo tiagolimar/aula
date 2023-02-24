@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="centralizar">
+        <h1>Calculadora</h1>
+        <form action="#" id="formulario">
+            <div class="calculadora">
+                <input type="text" placeholder="valor 1">
+                <input type="text" placeholder="valor 2">
+                <button onclick="Calcular(this)" class="btn">+</button>
+                <button onclick="Calcular(this)" class="btn">-</button>
+                <button onclick="Calcular(this)" class="btn">*</button>
+                <button onclick="Calcular(this)" class="btn">/</button>
+                <button onclick="Apagar()" class="btn">CE</button>
+                <div id="resultado">O resultado é = </div>
+            </div>
+        </form>
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>

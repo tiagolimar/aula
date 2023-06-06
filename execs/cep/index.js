@@ -1,19 +1,15 @@
-// via cep
-// https://viacep.com.br/ws/01001000/json/
-
-// UFs
-// https://servicodados.ibge.gov.br/api/v1/localidades/estados
-
-// Municípios por UF
-// https://servicodados.ibge.gov.br/api/v1/localidades/estados/{UF}/municipios
-
-
+"use strict";
 
 let consultar_cep = ()=>{
     fetch(`https://viacep.com.br/ws/${cep.value}/json/`)
     .then(response=>response.json())
     .then(json=>{
-        console.log(json);
+        ddd.value = json.ddd;
+        bairro.value = json.bairro;
+        logradouro.value = json.logradouro;
+    }).catch(()=>{
+        alert('Insira um CEP válido.')
+        cep.value = ''
     })
 }
 
@@ -28,10 +24,11 @@ let consultar_estados = ()=>{
 }
 
 let consultar_cidades = ()=>{
-    console.log('foi');
     fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estados.value}/municipios`)
         .then(response=>response.json())
         .then(json=>{
+            while(cidades.firstChild) cidades.removeChild(cidades.firstChild)
+            cidades.innerHTML = '<option>Escolher...</option>'
             json.forEach(element=>{
                 cidades.innerHTML += `<option>${element.nome}</option>`
             })
